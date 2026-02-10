@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: pink;
+    color: rgb(212, 34, 132);
+    font-family: "Pacifico", cursive;
+    cursor: url('/assets/heart-cursor.png'), auto;
+}
+
+/* This makes the image cover the whole screen and stay behind everything */
+.background {
+    position: fixed;
+    /* Fixed means it stays put even if you scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* This makes sure the image doesn't stretch weirdly */
+    z-index: -1;
+    /* Push it behind layer 0 */
+    opacity: 10%;
+}
+
+/* This allows the wrapper to sit on top of the fixed background */
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* This stacks the GIF and the Text vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    /* Removed the 200px margin so it centers better */
+}
+
+h1 {
+    font-size: 3.2em;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.gif {
+    width: 35vw;
+    object-fit: fill;
+}
+
+.buttons {
+    display: flex;
+    gap: 100px;
+    align-items: center; /* This prevents the No button from stretching vertically */
+}
+
+button {
+    border-radius: 20px;
+    border-color: transparent;
+    font-size: 2em;
+    padding: 20px 50px;
+    color: white;
+    font-family: "Pacifico", cursive;
+}
+
+
+.yes {
+    background: rgb(20, 120, 20);
+    cursor: url('/assets/heart-cursor.png'), auto;
+    transform: scale(1);
+}
+
+.yes:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.no {
+    background: rgb(166, 29, 29);
+    cursor: url('/assets/heart-cursor-empty-2.png'), auto;
+}
+
+.no:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+}
